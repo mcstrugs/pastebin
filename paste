@@ -1,3 +1,11 @@
 #!/bin/sh
 
-[ -z "$1" ] && tee -a "$(./genurl).txt" > /dev/null || cp --no-preserve=all "$1" "$(./genurl).txt"
+dest=$(cat DIR)
+script=$(cat SYNC_SCRIPT_PATH)
+filename="$(./genurl).txt"
+url="$(cat URL)/$filename"
+
+[ -z "$1" ] && tee -a "$dest/$filename" > /dev/null && sh "$script" || cp --no-preserve=all "$1" "$dest/$filename" && sh "$script"
+
+echo "Done!"
+echo "site available at $url"
