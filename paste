@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -z "$1" ] && tee -a "$(./genurl).txt" > /dev/null || cp --no-preserve=all "$1" "$(./genurl).txt"
