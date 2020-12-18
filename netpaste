@@ -2,7 +2,12 @@
 
 dest=$(cat $HOME/.config/netpaste/DIR)
 script=$(cat $HOME/.config/netpaste/SCRIPT)
+
 filename="$(genurl).txt"
+while test -e "$dest/$filename" ; do
+    filename="$(genurl).txt"
+done
+
 url="$(cat $HOME/.config/netpaste/URL)/$filename"
 
 [ -z "$1" ] && tee -a "$dest/$filename" > /dev/null && sh "$script" || cp --no-preserve=all "$1" "$dest/$filename" && sh "$script"
