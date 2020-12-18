@@ -10,18 +10,18 @@ mkdir "$config" 2> /dev/null
 
 echo "enter website url:"
 
-read url
+read -r url
 
-echo "$url" > "$config/URL"
+[ -z "$url" ] || echo "$url" > "$config/URL"
 
 echo "enter local website directory:"
 
-read dir
+read -r dir
 
-echo "$dir" > "$config/DIR"
+[ -z "$dir" ] || echo "$dir" > "$config/DIR"
 
 echo "enter sync script path:"
 
-read script
+read -r script
 
-echo "$script" > "$config/SCRIPT"
+[ -z "$script" ] || echo "$script" > "$config/SCRIPT"
