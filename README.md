@@ -8,11 +8,11 @@
 
 ## install.sh
 
-run ```install.sh``` to install
+run ``install.sh`` to install
 It installs to $HOME/.local/bin
 
 ## setup.sh
 
-makes ```$HOME/.config/netpaste``` folder
+makes ``$HOME/.config/netpaste`` folder
 asks for site URL, path to local directory, and sync script
-places these into ```$HOME/.config/netpaste```
+places these into ``$HOME/.config/netpaste``
